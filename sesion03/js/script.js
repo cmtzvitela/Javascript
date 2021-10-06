@@ -34,12 +34,26 @@ Ejercicio 3:
     Solicitar el nombre completo a un usuario e indicarle cuantas vocales tiene.
 */
 
-function vocales(){
-    let nombreVocales = window.prompt("Teclee el nombre del cual quiere saber las vocales");
-    let i=0;
-    
-    
+// function vocales(){
+//     let nombreVocales = window.prompt("Teclee el nombre del cual quiere saber las vocales");
+//     const myArr = nombreVocales.split("");
+//     let j = 0;
+//     for (let i =0; i<=myArr.length; i++) {
+//         if (myArr[i] = "a" || "e" || "i" || "o" || "u"){
+//             j++
+//         }
+//     }
+//     console.log('El numero de vocales es', j)
+// }
+
+function vocales (){
+    const nombreVocales = prompt("Cual es tu nombre?");
+    const coincidencia = nombreVocales.match(/[aeiou]/g);
+    console.log(coincidencia);
+    console.log(`Esta palabra contiene ${coincidencia.length} vocales`);
+
 }
+vocales();
 
 /*
 Ejercicio 4:
@@ -52,7 +66,9 @@ Ejercicio 4:
 */
 function substitute(){
     let frase = "Cada estudiante tiene su ritmo, cada estudiante tiene su talento, y cada estudiante complementa al estudiante que tiene a su lado";
-    let nuevaFrase = frase.replace("estudiante", "Koder");
+    const coincidencias = frase.match(/estudiante/g);
+    console.log(`Esta palabra contiene la palabra estudiante ${coincidencias.length} veces`);
+    let nuevaFrase = frase.replace(/estudiante/g, "Koder");
     return console.log(nuevaFrase);
 }
 substitute();
