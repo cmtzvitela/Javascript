@@ -111,3 +111,51 @@ function asterisco(){
 }
 
 asterisco();
+
+//Ejercicio 5
+// Solicitar al usuario ingresar un numero
+// Crear una funcion que genere un string con caracteres aleatorios, 
+// la longitud del string debe ser igual que el numero que ingreso el usuario
+
+// input : 6
+// output: '?AQX>H'
+
+// const numberUser = Number(prompt('Elige un numero de seis digitos'));
+
+function createRandomString (){
+    const numberRandom = Math.floor(Math.random()* (90-48) + 48);
+    const string = 'asdasd';
+
+    const newString = String.fromCharCode(numberRandom);
+    console.log(newString);
+    return numberRandom;
+}
+
+let result = '';
+for (let i = 0; i < numberUser; i++) {
+    result += createRandomString();
+}
+console.log(result);
+
+createRandomString();
+
+//Ejercicio 6
+//Input: 'abcdefg'
+//Output: 'AbCdEfG'
+
+let input = prompt("Escriba la frase que desee");
+let output = "";
+
+function minMay() {
+    for (i = 0; i<input.length; i++){
+        if ( i % 2 === 0){
+            output += input.charAt(i).toUpperCase();
+        } else {
+            output += input.charAt(i).toLowerCase();
+        }
+    }
+    return console.log(output);
+}
+
+minMay();
+
